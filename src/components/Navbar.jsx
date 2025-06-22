@@ -15,7 +15,7 @@ const Navbar = () => {
                     }
                 });
             },
-            { threshold: 0.6}
+            { threshold: 0.6 }
         );
 
         navbarData.forEach((item) => {
@@ -26,7 +26,7 @@ const Navbar = () => {
         return () => observer.disconnect();
     }, []);
 
-    // Lock body scroll when menu is open
+
     useEffect(() => {
         if (isMenuOpen) {
             document.body.style.overflow = 'hidden';
@@ -44,7 +44,7 @@ const Navbar = () => {
 
     const handleClick = (id) => {
         setActiveId(id);
-        setIsMenuOpen(false); // Close menu when item is clicked
+        setIsMenuOpen(false);
     };
 
     const toggleDarkMode = () => {
@@ -75,20 +75,20 @@ const Navbar = () => {
 
                             {/* Desktop Menu */}
                             <ul className="hidden md:flex items-center gap-6">
-                               {navbarData.map((item) => (
-                                <li key={item.id}>
-                                    <a
-                                    href={`#${item.id}`}
-                                    onClick={() => handleClick(item.id)}
-                                    className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-all duration-200 ${activeId === item.id
-                                        ? "bg-blue-600 shadow-2xl text-white"
-                                        : "text-gray-800 dark:text-white hover:text-blue-600"
-                                        }`}>
+                                {navbarData.map((item) => (
+                                    <li key={item.id}>
+                                        <a
+                                            href={`#${item.id}`}
+                                            onClick={() => handleClick(item.id)}
+                                            className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-all duration-200 ${activeId === item.id
+                                                ? "bg-blue-600 shadow-2xl text-white"
+                                                : "text-gray-800 dark:text-white hover:text-blue-600"
+                                                }`}>
                                             <i className={`bx ${item.icon}`}></i>
                                             <span>{item.label}</span>
                                         </a>
-                                </li>
-                               ))}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
@@ -97,9 +97,8 @@ const Navbar = () => {
 
             {/* Off-Canvas Mobile Menu */}
             <div
-                className={`fixed top-0 right-0 h-full w-70 bg-white dark:bg-gray-800 shadow-xl transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
-                    isMenuOpen ? "translate-x-0" : "translate-x-full"
-                }`}
+                className={`fixed top-0 right-0 h-full w-70 bg-white dark:bg-gray-800 shadow-xl transform transition-transform duration-300 ease-in-out z-50 md:hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+                    }`}
             >
                 <div className="flex flex-col h-full">
                     {/* Header */}
@@ -121,30 +120,29 @@ const Navbar = () => {
                     <div className="flex-1 overflow-y-auto py-6">
                         <ul className="flex flex-col gap-2 px-6">
                             {navbarData.map((item, index) => (
-                                <li 
+                                <li
                                     key={item.id}
-                                    className={`transform transition-all duration-300 ${
-                                        isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-                                    }`}
-                                    style={{ 
-                                        transitionDelay: `${isMenuOpen ? index * 0.1 : 0}s` 
+                                    className={`transform transition-all duration-300 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+                                        }`}
+                                    style={{
+                                        transitionDelay: `${isMenuOpen ? index * 0.1 : 0}s`
                                     }}
                                 >
                                     <a
                                         href={`#${item.id}`}
                                         onClick={() => handleClick(item.id)}
-                                        className={`flex items-center gap-3 text-lg font-medium px-4 py-3 rounded-lg transition-all duration-200 ${
-                                            activeId === item.id
+                                        className={`flex items-center gap-3 text-lg font-medium px-4 py-3 rounded-lg transition-all duration-200 ${activeId === item.id
                                                 ? "bg-blue-600 text-white shadow-lg"
                                                 : "text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700"
-                                        }`}
+                                            }`}
                                     >
                                         <i className={`bx ${item.icon} text-xl`}></i>
                                         <span>{item.label}</span>
+                                        <i className="bx bx-chevron-right ml-auto text-xl"></i>
                                     </a>
                                 </li>
                             ))}
-                            
+
                             {/* Mobile Dark Mode Toggle */}
                             <li>
                                 <button
