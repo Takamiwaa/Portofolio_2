@@ -87,7 +87,7 @@ const Navbar = () => {
                                             href={`#${item.id}`}
                                             onClick={() => handleClick(item.id)}
                                             className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-all duration-200 ${activeId === item.id
-                                                ? "bg-blue-600 shadow-2xl text-white"
+                                                ? "bg-gray-800 shadow-2xl dark:bg-white dark:text-gray-800 text-white"
                                                 : "text-gray-800 dark:text-white hover:text-blue-600"
                                                 }`}>
                                             <i className={`bx ${item.icon}`}></i>
@@ -138,13 +138,13 @@ const Navbar = () => {
                                         href={`#${item.id}`}
                                         onClick={() => handleClick(item.id)}
                                         className={`flex items-center gap-3 text-lg font-medium px-4 py-3 rounded-lg transition-all duration-200 ${activeId === item.id
-                                            ? "bg-blue-600 text-white shadow-lg"
+                                            ? "bg-gray-800 dark:bg-white dark:text-gray-800 text-white shadow-lg"
                                             : "text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700"
                                             }`}
                                     >
                                         <i className={`bx ${item.icon} text-xl`}></i>
                                         <span>{item.label}</span>
-                                        <i className="bx bx-chevron-right ml-auto text-xl"></i>
+                                        <i className="bx bx-chevron-right ml-auto text-xl"></i> {/*langsung ke kanan */}
                                     </a>
                                 </li>
                             ))}
