@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import homeData from "../data/homeData.jsx";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const Home = () => {
   const [currentText, setCurrentText] = useState("");
@@ -78,40 +80,44 @@ const Home = () => {
               </span>
               <div className="flex space-x-3">
                 {homeData.socialMedia.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 text-white dark:bg-white rounded-full flex items-center shadow-2xl justify-center dark:text-gray-800 hover:text-white dark:hover:bg-white dark:hover:text-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                    aria-label={`Visit ${social.platform}`}
-                  >
-                    <i className={`${social.icon} text-lg`}></i>
-                  </a>
+                  <Tippy content={social.platform} key={index} placement="top">
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-gray-800 text-white dark:bg-white rounded-full flex items-center shadow-2xl justify-center dark:text-gray-800 hover:text-white dark:hover:bg-white dark:hover:text-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                      aria-label={`Visit ${social.platform}`}
+                    >
+                      <i className={`${social.icon} text-lg`}></i>
+                    </a>
+                  </Tippy>
                 ))}
               </div>
+
             </div>
 
 
             <div className="flex flex-col sm:flex-row gap-4" data-aos-delay="600" data-aos="fade-down">
               {homeData.buttons.map((btn, index) => (
-                <a
-                  key={index}
-                  href={btn.href}
-                  className={`inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${btn.type === "primary"
+                <Tippy content={btn.label} key={index} placement="top">
+                  <a
+                    href={btn.href}
+                    className={`inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${btn.type === "primary"
                       ? "bg-gray-800 dark:bg-white text-white dark:text-gray-800 hover:bg-gray-800 dark:hover:bg-gray-100"
                       : "border-2 border-gray-800 dark:border-white text-gray-800 dark:text-white hover:bg-gray-800 hover:text-white dark:hover:bg-white dark:hover:text-gray-800"
-                    }`}
-                  target={btn.href.startsWith("http") ? "_blank" : "_self"}
-                  rel="noopener noreferrer"
-                >
-                  <i
-                    className={`bx ${btn.type === "primary" ? "bx-download" : "bx-envelope"
-                      } mr-2`}
-                  ></i>
-                  {btn.label}
-                </a>
+                      }`}
+                    target={btn.href.startsWith("http") ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className={`bx ${btn.type === "primary" ? "bx-download" : "bx-envelope"
+                        } mr-2`}
+                    ></i>
+                    {btn.label}
+                  </a>
+                </Tippy>
               ))}
+
             </div>
           </div>
 
@@ -133,19 +139,26 @@ const Home = () => {
                 "bottom-8 sm:bottom-10 right-10 sm:right-12",
               ];
               return (
-                <div
+                <Tippy
                   key={index}
-                  className={`absolute ${positions[index % positions.length]
-                    } w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:hover:bg-white dark:hover:text-gray-800 rounded-full shadow-lg dark:shadow-gray-800 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer`}
-                  style={{
-                    animationDelay: `${index * 0.5}s`,
-                  }}
-                  title={tech.label}
+                  content={tech.label}
+                  placement="top"
+                  animation="shift-away"
+                  delay={[0, 0]}
                 >
-                  <i className={`${tech.icon} text-xl sm:text-2xl`}></i>
-                </div>
+                  <div
+                    className={`absolute ${positions[index % positions.length]
+                      } w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:hover:bg-white dark:hover:text-gray-800 rounded-full shadow-lg dark:shadow-gray-800 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer`}
+                    style={{
+                      animationDelay: `${index * 0.5}s`,
+                    }}
+                  >
+                    <i className={`${tech.icon} text-xl sm:text-2xl`}></i>
+                  </div>
+                </Tippy>
               );
             })}
+
 
           </div>
         </div>
