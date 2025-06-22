@@ -58,9 +58,8 @@ const Home = () => {
                 <span className="typing-text">
                   {currentText}
                   <span
-                    className={`cursor ${
-                      showCursor ? "opacity-100" : "opacity-0"
-                    } transition-all duration-200`}
+                    className={`cursor ${showCursor ? "opacity-100" : "opacity-0"
+                      } transition-all duration-200`}
                   >
                     |
                   </span>
@@ -68,7 +67,7 @@ const Home = () => {
               </h2>
             </div>
 
-         
+
             <p className="text-lg text-gray-800 dark:text-white leading-relaxed max-w-lg" data-aos-delay="600" data-aos="fade-left">
               {homeData.description}
             </p>
@@ -93,24 +92,22 @@ const Home = () => {
               </div>
             </div>
 
-           
+
             <div className="flex flex-col sm:flex-row gap-4" data-aos-delay="600" data-aos="fade-down">
               {homeData.buttons.map((btn, index) => (
                 <a
                   key={index}
                   href={btn.href}
-                  className={`inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${
-                    btn.type === "primary"
+                  className={`inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${btn.type === "primary"
                       ? "bg-gray-800 dark:bg-white text-white dark:text-gray-800 hover:bg-gray-800 dark:hover:bg-gray-100"
                       : "border-2 border-gray-800 dark:border-white text-gray-800 dark:text-white hover:bg-gray-800 hover:text-white dark:hover:bg-white dark:hover:text-gray-800"
-                  }`}
+                    }`}
                   target={btn.href.startsWith("http") ? "_blank" : "_self"}
                   rel="noopener noreferrer"
                 >
                   <i
-                    className={`bx ${
-                      btn.type === "primary" ? "bx-download" : "bx-envelope"
-                    } mr-2`}
+                    className={`bx ${btn.type === "primary" ? "bx-download" : "bx-envelope"
+                      } mr-2`}
                   ></i>
                   {btn.label}
                 </a>
@@ -118,7 +115,7 @@ const Home = () => {
             </div>
           </div>
 
-         
+
           <div className="relative flex justify-center items-center" data-aos-delay="600" data-aos="fade-up">
             <div className="relative z-10">
               <img
@@ -128,7 +125,6 @@ const Home = () => {
               />
             </div>
 
-         
             {homeData.floatingIcons.map((tech, index) => {
               const positions = [
                 "top-0 left-16 sm:left-20",
@@ -139,9 +135,8 @@ const Home = () => {
               return (
                 <div
                   key={index}
-                  className={`absolute ${
-                    positions[index % positions.length]
-                  } w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:hover:bg-white dark:hover:text-gray-800 rounded-full shadow-lg dark:shadow-gray-800 items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer hidden sm:flex`}
+                  className={`absolute ${positions[index % positions.length]
+                    } w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:hover:bg-white dark:hover:text-gray-800 rounded-full shadow-lg dark:shadow-gray-800 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer`}
                   style={{
                     animationDelay: `${index * 0.5}s`,
                   }}
@@ -151,6 +146,7 @@ const Home = () => {
                 </div>
               );
             })}
+
           </div>
         </div>
 
