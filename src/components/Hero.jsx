@@ -45,16 +45,16 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-white dark:bg-gray-800 pt-20 overflow-hidden"
+      className="min-h-screen bg-white dark:bg-gray-800 pt-20 overflow-hidden" data-aos-duration="1000" data-aos="fade-down"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-5rem)] py-12">
-          <div className="space-y-8" data-aos="fade-right" data-aos-duration="1000">
+          <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white" data-aos-dely="600" data-aos="fade-down">
                 {homeData.title}
               </h1>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-white flex items-center">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-white flex items-center" data-aos-delay="600" data-aos="fade-right">
                 <span className="typing-text">
                   {currentText}
                   <span
@@ -68,23 +68,12 @@ const Home = () => {
               </h2>
             </div>
 
-          
-            <p
-              className="text-lg text-gray-800 dark:text-white leading-relaxed max-w-lg"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="1000"
-            >
+         
+            <p className="text-lg text-gray-800 dark:text-white leading-relaxed max-w-lg" data-aos-delay="600" data-aos="fade-left">
               {homeData.description}
             </p>
 
-          
-            <div
-              className="flex items-center space-x-4"
-              data-aos="fade-up"
-              data-aos-delay="400"
-              data-aos-duration="1000"
-            >
+            <div className="flex items-center space-x-4" data-aos-delay="600" data-aos="fade-down">
               <span className="text-gray-800 dark:text-white font-medium">
                 Follow me on:
               </span>
@@ -95,7 +84,7 @@ const Home = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 text-white  dark:bg-white  rounded-full flex items-center shadow-2xl justify-center dark:text-gray-800 hover:text-white dark:hover:bg-white    dark:hover:text-gray-800 transition-all duration-300  hover:shadow-lg hover:-translate-y-1"
+                    className="w-10 h-10 bg-gray-800 text-white dark:bg-white rounded-full flex items-center shadow-2xl justify-center dark:text-gray-800 hover:text-white dark:hover:bg-white dark:hover:text-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                     aria-label={`Visit ${social.platform}`}
                   >
                     <i className={`${social.icon} text-lg`}></i>
@@ -105,12 +94,7 @@ const Home = () => {
             </div>
 
            
-            <div
-              className="flex flex-col sm:flex-row gap-4"
-              data-aos="fade-up"
-              data-aos-delay="600"
-              data-aos-duration="1000"
-            >
+            <div className="flex flex-col sm:flex-row gap-4" data-aos-delay="600" data-aos="fade-down">
               {homeData.buttons.map((btn, index) => (
                 <a
                   key={index}
@@ -134,12 +118,8 @@ const Home = () => {
             </div>
           </div>
 
-        
-          <div
-            className="relative flex justify-center items-center"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-          >
+         
+          <div className="relative flex justify-center items-center" data-aos-delay="600" data-aos="fade-up">
             <div className="relative z-10">
               <img
                 src={homeData.img}
@@ -148,7 +128,7 @@ const Home = () => {
               />
             </div>
 
-           
+         
             {homeData.floatingIcons.map((tech, index) => {
               const positions = [
                 "top-0 left-16 sm:left-20",
@@ -161,9 +141,9 @@ const Home = () => {
                   key={index}
                   className={`absolute ${
                     positions[index % positions.length]
-                  } w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:hover:bg-white dark:hover:text-gray-800 rounded-full shadow-lg dark:shadow-gray-800  items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer hidden sm:flex`}
+                  } w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:hover:bg-white dark:hover:text-gray-800 rounded-full shadow-lg dark:shadow-gray-800 items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer hidden sm:flex`}
                   style={{
-                    animationDelay: `${index * 0.5}s`
+                    animationDelay: `${index * 0.5}s`,
                   }}
                   title={tech.label}
                 >
