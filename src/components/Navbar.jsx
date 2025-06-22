@@ -6,11 +6,10 @@ const Navbar = () => {
     const [activeId, setActiveId] = useState(null);
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const currentYear = () => {
-        const now = new Date();
-        const tahunSekarang = now.getFullYear();
-        return tahunSekarang;
-    }
+  
+    const currentYear = () => new Date().getFullYear();
+
+  
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -31,17 +30,43 @@ const Navbar = () => {
         return () => observer.disconnect();
     }, []);
 
-
+  
     useEffect(() => {
         if (isMenuOpen) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = "hidden";
         } else {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = "unset";
         }
+
         return () => {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = "unset";
         };
     }, [isMenuOpen]);
+
+   
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+
+        if (
+            savedTheme === "dark" ||
+            (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            setIsDarkMode(true);
+            document.documentElement.classList.add("dark");
+        } else {
+            setIsDarkMode(false);
+            document.documentElement.classList.remove("dark");
+        }
+    }, []);
+
+   
+    const toggleDarkMode = () => {
+        const newMode = !isDarkMode;
+        setIsDarkMode(newMode);
+        document.documentElement.classList.toggle("dark");
+
+        localStorage.setItem("theme", newMode ? "dark" : "light");
+    };
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -51,12 +76,6 @@ const Navbar = () => {
         setActiveId(id);
         setIsMenuOpen(false);
     };
-
-    const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-        document.documentElement.classList.toggle('dark');
-    };
-
     return (
         <>
             <nav className="bg-white fixed top-0 left-0 w-full z-50 p-1.5 overflow-hidden shadow-lg dark:bg-gray-800 transition-all duration-300" data-aos-duration="1000" data-aos="fade-down">
