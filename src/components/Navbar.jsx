@@ -63,12 +63,13 @@ const Navbar = () => {
                 <div className="container">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex items-center justify-between py-4">
-                            <div className="flex items-center gap-2">
+                            <a href="#" className="flex items-center gap-2">
                                 <i className="bx bx-code-alt text-2xl text-gray-800 dark:text-white"></i>
                                 <h1 className="text-2xl font-semibold text-gray-800 dark:text-white">
                                     My Portofolio
                                 </h1>
-                            </div>
+                            </a>
+
 
                             <button
                                 className="md:hidden text-gray-700 dark:text-white focus:outline-none"
@@ -137,8 +138,8 @@ const Navbar = () => {
                                         href={`#${item.id}`}
                                         onClick={() => handleClick(item.id)}
                                         className={`flex items-center gap-3 text-lg font-medium px-4 py-3 rounded-lg transition-all duration-200 ${activeId === item.id
-                                                ? "bg-blue-600 text-white shadow-lg"
-                                                : "text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            ? "bg-blue-600 text-white shadow-lg"
+                                            : "text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700"
                                             }`}
                                     >
                                         <i className={`bx ${item.icon} text-xl`}></i>
