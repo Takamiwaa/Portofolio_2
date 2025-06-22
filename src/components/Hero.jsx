@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import homeData from "../data/homeData.jsx";
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 
 const Home = () => {
   const [currentText, setCurrentText] = useState("");
