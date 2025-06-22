@@ -11,12 +11,12 @@ const homeData = {
   buttons: [
     {
       label: "Explore My Project",
-      href: "#projects",
+      href: "#",
       type: "primary",
     },
     {
       label: "Download My CV",
-      href: "/assets/Hizkia-CV.pdf",
+      href: "#",
       type: "secondary",
     },
   ],
@@ -30,22 +30,22 @@ const homeData = {
     {
       platform: "GitHub",
       icon: "bx bxl-github",
-      href: "https://github.com/hizkiasiahaan",
+      href: "#",
     },
     {
       platform: "LinkedIn",
       icon: "bx bxl-linkedin-square",
-      href: "https://www.linkedin.com/in/hizkiasiahaan/",
+      href: "#",
     },
     {
       platform: "Instagram",
       icon: "bx bxl-instagram",
-      href: "https://www.instagram.com/hizkiasiahaan/",
+      href: "#",
     },
     {
       platform: "Twitter",
       icon: "bx bxl-twitter",
-      href: "https://twitter.com/hizkiasiahaan",
+      href: "#",
     },
   ],
 };
