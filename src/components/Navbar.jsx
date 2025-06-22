@@ -6,6 +6,11 @@ const Navbar = () => {
     const [activeId, setActiveId] = useState(null);
     const [isDarkMode, setIsDarkMode] = useState(false);
 
+    const currentYear = () => {
+        const now = new Date();
+        const tahunSekarang = now.getFullYear();
+        return tahunSekarang;
+    }
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -160,7 +165,7 @@ const Navbar = () => {
                     {/* Footer */}
                     <div className="p-6 border-t border-gray-200 dark:border-gray-700">
                         <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-                            © {new Date().getFullYear()} Hizkia Siahaan. All rights reserved
+                            © {currentYear()} Hizkia Siahaan. All rights reserved
                         </div>
                     </div>
                 </div>
