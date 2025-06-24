@@ -140,15 +140,23 @@ const Home = () => {
 
             </div>
 
-            {/* STATS SECTION */}
+       
+            {/* Quick Stats Heading */}
+            <h4 className="flex items-center gap-2 text-lg font-semibold mb-4 text-gray-800 dark:text-white">
+              <i className="bx bx-bar-chart-alt text-base" />
+              Quick Stats:
+            </h4>
+
+            {/* Stats Grid */}
             <div
-              className="grid grid-cols-2 sm:grid-cols-4 text-sm text-gray-800 dark:text-white gap-6 mt-8"
+              className="grid grid-cols-2 sm:grid-cols-4 text-sm text-gray-800 dark:text-white gap-6 mt-2"
               data-aos-delay="600"
-              data-aos="fade-up">
+              data-aos="fade-up"
+            >
               {homeData.stats.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 bg-gray-800 dark:bg-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg shadow-lg p-2 rounded-lg"
+                  className="flex items-center gap-2 bg-gray-800 dark:bg-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg shadow-lg p-2 rounded-3xl"
                 >
                   <div className="text-base text-white dark:text-gray-800">
                     <i className={item.icon}></i>
@@ -158,10 +166,9 @@ const Home = () => {
                     <p className="text-xs text-white dark:text-gray-800">{item.label}</p>
                   </div>
                 </div>
-
-
               ))}
             </div>
+
           </div>
 
 
