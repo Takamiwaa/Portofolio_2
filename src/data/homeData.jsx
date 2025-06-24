@@ -6,7 +6,8 @@ const homeData = {
     "Tailwind Warrior",
     "UI/UX Explorer",
   ],
-  description: "I build modern and responsive web apps with clean UI & smooth UX.",
+  description: "I build modern, responsive web apps with clean UI and smooth UX  blending design and code to create experiences that feel intuitive, fast, and delightful to use.",
+
   img: "/assets/profile.jpg",
   buttons: [
     {
