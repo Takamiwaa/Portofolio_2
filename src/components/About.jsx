@@ -25,18 +25,22 @@ const About = () => {
                 {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center py-12 min-h-[calc(100vh-5rem)]">
                     {/* Profile Image */}
-                    <div className="w-full flex justify-center lg:justify-start">
+                    <div className="w-full flex justify-center lg:justify-start" data-aos-delay="600" data-aos="fade-right">
                         <img
                             src={aboutData.image}
                             alt="About Me"
-                            className="w-full max-w-md rounded-xl shadow-lg object-cover"
+                            className="w-full max-w-md rounded-xl shadow-lg object-cover 
+             border-8 border-white dark:border-gray-800 
+             hover:shadow-3xl hover:-translate-y-2 
+             transition-all duration-300"
                         />
+
                     </div>
 
                     {/* Biodata Section */}
                     <div className="w-full text-gray-800 dark:text-white">
                         {/* About Narrative - Two Columns */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8" data-aos-delay="600" data-aos="fade-down">
                             <div className="flex flex-col gap-2">
                                 <div className="flex items-center gap-2 mb-2">
                                     <div className="w-12 h-12 p-4 flex items-center justify-center rounded-lg shadow-lg bg-gray-800 dark:bg-white dark:text-gray-800 text-white">
@@ -64,13 +68,13 @@ const About = () => {
 
                         </div>
                         {/* Personal Info Heading */}
-                        <div className="flex items-center gap-2 mb-4">
+                        <div className="flex items-center gap-2 mb-4" data-aos-delay="600" data-aos="fade-down">
                             <i className="bx bx-info-circle text-2xl text-gray-800 dark:text-white" aria-hidden="true"></i>
                             <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">Personal Info</h2>
                         </div>
 
                         {/* Biodata Grid - 2x2 Layout */}
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-lg mx-auto lg:mx-0">
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-lg mx-auto lg:mx-0" data-aos-delay="600" data-aos="fade-down">
                             {aboutData.biodata.map((item, index) => (
                                 <li key={index} className="flex items-center gap-4">
                                     <div className="flex items-center justify-center w-12 h-12 p-4 rounded-lg bg-gray-800 dark:bg-white dark:text-gray-800 shadow-lg text-white">
@@ -92,6 +96,7 @@ const About = () => {
                                 className={resumeButtonClasses}
                                 download
                                 aria-label="Download Resume"
+                                data-aos-delay="600" data-aos="fade-down"
                             >
                                 <i className={`${aboutData.resume.icon} text-lg mr-2`} aria-hidden="true"></i>
                                 {aboutData.resume.label}
