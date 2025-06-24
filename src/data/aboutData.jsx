@@ -22,7 +22,7 @@ const aboutData = {
     aboutNarrative: {
         whoAmI: {
             text: `I'm a frontend developer who crafts responsive, interactive, and clean UIs. With a background in Informatics Engineering, I blend design sense with technical logic.`,
-            icon: "bx-id-card"
+            icon: "bx-info-circle"
         },
         approach: {
             text: `I focus on user-centered design, performance, and accessibility   always evolving with modern tech to deliver seamless digital experiences.`,
