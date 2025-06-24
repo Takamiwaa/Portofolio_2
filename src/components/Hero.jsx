@@ -118,6 +118,29 @@ const Home = () => {
               ))}
 
             </div>
+
+            {/* STATS SECTION */}
+            <div
+              className="grid grid-cols-2 sm:grid-cols-4 text-sm text-gray-800 dark:text-white gap-6 mt-8"
+              data-aos-delay="600"
+              data-aos="fade-up">
+              {homeData.stats.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 bg-gray-800 dark:bg-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg p-2 rounded-xl"
+                >
+                  <div className="text-base text-white dark:text-gray-800">
+                    <i className={item.icon}></i>
+                  </div>
+                  <div>
+                    <p className="font-bold text-white dark:text-gray-800">{item.value}</p>
+                    <p className="text-xs text-white dark:text-gray-800">{item.label}</p>
+                  </div>
+                </div>
+
+
+              ))}
+            </div>
           </div>
 
 
@@ -126,7 +149,7 @@ const Home = () => {
               <img
                 src={homeData.img}
                 alt="Hizkia Siahaan Profile"
-                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl dark:shadow-gray-900/50 border-8 border-white dark:border-gray-800 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"
+                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl dark:shadow-gray-800 border-8 border-white dark:border-gray-800 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300"
               />
             </div>
 
@@ -147,7 +170,7 @@ const Home = () => {
                 >
                   <div
                     className={`absolute ${positions[index % positions.length]
-                      } w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:hover:bg-white dark:hover:text-gray-800 rounded-full shadow-lg dark:shadow-gray-800 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer`}
+                      } w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 text-white dark:bg-white dark:text-gray-800 dark:border  rounded-full shadow-lg dark:shadow-gray-800 flex items-center justify-center hover:scale-110 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-float cursor-pointer`}
                     style={{
                       animationDelay: `${index * 0.5}s`,
                     }}
