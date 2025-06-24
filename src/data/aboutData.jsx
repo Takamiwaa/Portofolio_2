@@ -5,7 +5,7 @@ const aboutData = {
 
     biodata: [
         { label: "Name", value: "Hizkia Siahaan", icon: "bx bx-id-card" },
-        { label: "Date of Birth", value: "December,02 2004", icon: "bx bx-calendar" },
+        { label: "Date of Birth", value: "December,02-2004", icon: "bx bx-calendar" },
         { label: "Place of Birth", value: "Medan, Indonesia", icon: "bx bx-map" },
         { label: "Email", value: "siahaanhizkia548@gmail.com", icon: "bx bx-envelope" },
         { label: "Phone", value: "+62 895 1014 4492", icon: "bx bx-phone" },
