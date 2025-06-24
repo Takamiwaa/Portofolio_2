@@ -1,5 +1,7 @@
 import aboutData from "../data/aboutData.jsx";
 import Tippy from '@tippyjs/react';
+import Swal from 'sweetalert2';
+
 
 const About = () => {
     // Compute resume button classes based on type
@@ -91,18 +93,25 @@ const About = () => {
 
 
                         <Tippy content="Download My Resume">
-                            <a
-                                href={aboutData.resume.href}
+                            <button
+                                onClick={() => {
+                                    Swal.fire({
+                                        title: "Not Available Yet 😅",
+                                        text: "My resume is still in progress. Please check back later!",
+                                        icon: "info",
+                                        confirmButtonColor: "#1F2937", 
+                                        confirmButtonText: "Alright",
+                                    });
+                                }}
                                 className={resumeButtonClasses}
-                                download
                                 aria-label="Download Resume"
-                                data-aos-delay="600" data-aos="fade-down"
+                                data-aos-delay="600"
+                                data-aos="fade-down"
                             >
                                 <i className={`${aboutData.resume.icon} text-lg mr-2`} aria-hidden="true"></i>
                                 {aboutData.resume.label}
-                            </a>
+                            </button>
                         </Tippy>
-
                     </div>
                 </div>
             </div>
