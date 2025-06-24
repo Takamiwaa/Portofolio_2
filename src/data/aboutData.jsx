@@ -25,7 +25,7 @@ const aboutData = {
             icon: "bx-id-card"
         },
         approach: {
-            text: `I focus on user-centered design, performance, and accessibility — always evolving with modern tech to deliver seamless digital experiences.`,
+            text: `I focus on user-centered design, performance, and accessibility   always evolving with modern tech to deliver seamless digital experiences.`,
             icon: "bx-bulb"
         }
     }

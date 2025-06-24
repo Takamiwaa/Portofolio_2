@@ -31,12 +31,12 @@ const homeData = {
     {
       platform: "GitHub",
       icon: "bx bxl-github",
-      href: "#",
+      href: "https://github.com/Hizkia178",
     },
     {
       platform: "LinkedIn",
       icon: "bx bxl-linkedin-square",
-      href: "#",
+      href: "https://www.linkedin.com/in/hizkia-siahaan-59b003280/",
     },
     {
       platform: "Instagram",
