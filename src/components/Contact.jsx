@@ -5,17 +5,17 @@ const Contact = () => {
   const [activeTab, setActiveTab] = useState("form");
 
   return (
-    <section id="contact" className="min-h-screen pb-20 bg-white dark:bg-gray-800 pt-20">
+    <section id="contact" className="min-h-screen pb-20 bg-white dark:bg-gray-800 pt-20" data-aos-duration="1000" data-aos="fade-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Title & Subtitle */}
-        <div className="text-center mb-12 text-gray-800">
+        <div className="text-center mb-12 text-gray-800" data-aos-delay="600" data-aos="fade-down">
           <h2 className="text-5xl font-bold dark:text-white mb-2">{contactData.title}</h2>
           <p className="text-lg dark:text-gray-400">{contactData.subtitle}</p>
         </div>
 
         {/* Tabs Menu */}
-        <div className="flex justify-center mb-8 gap-4 flex-wrap">
+        <div className="flex justify-center mb-8 gap-4 flex-wrap" data-aos-delay="600" data-aos="fade-up">
           {contactData.tabs.map((tab) => (
             <button
               key={tab.value}
@@ -34,7 +34,7 @@ const Contact = () => {
         {/* Tabs Content */}
         <div>
           {activeTab === "form" && (
-            <div className="rounded-lg py-12 px-7 shadow-lg border border-white max-w-xl mx-auto">
+            <div className="rounded-lg py-12 px-7 shadow-lg border border-white max-w-xl mx-auto" data-aos-delay="600" data-aos="fade-down">
               <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-white flex items-center gap-2">
                 <i className="bx bx-envelope text-lg" />
                 Send Me a Message
@@ -98,35 +98,35 @@ const Contact = () => {
           )}
 
 
-
           {activeTab === "support" && (
-            <div className="flex flex-col gap-4">
+            <div className="grid gap-4 max-w-md mx-auto" data-aos-delay="600" data-aos="fade-down">
               {contactData.supportPlatforms.map((item, index) => (
-                <div key={index}>
+                <div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 border border-white rounded-lg p-6 shadow-lg hover:-translate-y-1 transition-transform"
+                >
                   {item.type === "image" ? (
-                    <div>
-                      <p className="text-sm font-medium mb-2 text-gray-800 dark:text-white">{item.label}</p>
+                    <div className="flex flex-col items-center text-center">
+                      <h4 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                        {item.label}
+                      </h4>
+                      <p className="text-sm text-gray-800 dark:text-white mb-4 leading-relaxed">
+                        If my work has helped or inspired you, consider supporting me by scanning the QR code below. Every little bit means a lot 🙌
+                      </p>
                       <img
                         src={item.imageSrc}
                         alt={item.alt}
-                        className="w-40 h-auto rounded-lg shadow-md"
+                        className="w-full h-auto rounded-lg shadow-md"
                       />
                     </div>
-                  ) : (
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
-                    >
-                      <i className={`${item.icon} text-lg`} />
-                      {item.label}
-                    </a>
-                  )}
+                  ) : null}
                 </div>
               ))}
             </div>
           )}
+
+
+
         </div>
 
       </div>

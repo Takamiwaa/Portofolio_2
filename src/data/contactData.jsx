@@ -51,15 +51,9 @@ const contactData = {
         {
             label: "QRIS",
             type: "image",
-            imageSrc: "/assets/qris.png",
+            imageSrc: "/assets/qris.jpg",
             alt: "Scan to support via QRIS",
-        },
-        {
-            label: "DANA",
-            type: "link",
-            icon: "bx bx-wallet",
-            href: "https://link.dana.id/kamu",
-        },
+        }
     ],
 
 };
