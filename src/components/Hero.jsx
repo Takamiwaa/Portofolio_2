@@ -127,7 +127,7 @@ const Home = () => {
               {homeData.stats.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 bg-gray-800 dark:bg-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg p-2 rounded-xl"
+                  className="flex items-center gap-2 bg-gray-800 dark:bg-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg shadow-lg p-2 rounded-lg"
                 >
                   <div className="text-base text-white dark:text-gray-800">
                     <i className={item.icon}></i>
