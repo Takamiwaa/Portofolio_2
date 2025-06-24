@@ -2,6 +2,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
 function App() {
 
   return (
@@ -10,6 +12,8 @@ function App() {
       <Home />
       <About />
       <Projects />
+      <Experience />
+      <Skills />
     </>
   )
 }
