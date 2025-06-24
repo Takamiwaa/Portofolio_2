@@ -21,7 +21,7 @@ const Footer = () => {
         <div>
           <h4 className="flex items-center gap-2 text-lg font-semibold mb-3">
             <i className={`${footerData.navigationIcon} text-base`}></i>
-            Quick  Navigation
+            Navigation
           </h4>
           <ul className="flex flex-col gap-2 text-sm">
             {footerData.navigation.map((item, index) => (
@@ -38,7 +38,7 @@ const Footer = () => {
         <div>
           <h4 className="flex items-center gap-2 text-lg font-semibold mb-3">
             <i className={`${footerData.socialsIcon} text-base`}></i>
-            Connect Me
+            Find Me Online
           </h4>
           <ul className="flex flex-wrap gap-3">
             {footerData.socials.map((social, index) => (
