@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Hero';
 import About from './components/About';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 function App() {
 
   return (
@@ -10,6 +11,7 @@ function App() {
       <Home />
       <About />
       <Footer />
+      <ScrollToTop />
     </>
   )
 }
