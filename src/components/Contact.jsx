@@ -113,7 +113,7 @@ const Contact = () => {
           )}
 
           {activeTab === "support" && (
-            <div className="grid gap-4 max-w-md mx-auto" data-aos-delay="600" data-aos="fade-down">
+            <div className="grid gap-4 max-w-xl mx-auto" data-aos-delay="600" data-aos="fade-down">
               {contactData.supportPlatforms.map((item, index) => (
                 <div
                   key={index}
