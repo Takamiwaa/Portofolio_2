@@ -4,6 +4,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Contact from './components/Contact';
+import Testimonials from './components/Testimonial';
 function App() {
 
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Home />
       <About />
+      <Testimonials />
       <Contact />
       <Footer />
       <ScrollToTop />
