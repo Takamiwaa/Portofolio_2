@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
+import Swal from "sweetalert2";
 
 // Inisialisasi Supabase client
 const supabaseUrl = "https://ssmqxtbgghewocbmghqk.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzbXF4dGJnZ2hld29jYm1naHFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA4Mjc3MjEsImV4cCI6MjA2NjQwMzcyMX0.WrlO0cuSIjw1R5jZqUR4K5OG05iAIi03Eai6E9OT6mQ"; 
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzbXF4dGJnZ2hld29jYm1naHFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA4Mjc3MjEsImV4cCI6MjA2NjQwMzcyMX0.WrlO0cuSIjw1R5jZqUR4K5OG05iAIi03Eai6E9OT6mQ";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const CustomModal = ({ isOpen, onClose, children }) => {
@@ -50,7 +51,7 @@ const Testimonials = () => {
             const { data, error } = await supabase
                 .from('testimonials')
                 .select('*')
-                .order('created_at', { ascending: false }); // Urutkan dari terbaru
+                .order('created_at', { ascending: false });
             if (error) {
                 console.error('Error fetching testimonials:', error);
             } else {
@@ -127,7 +128,17 @@ const Testimonials = () => {
         if (error) {
             setIsSubmitting(false);
             console.error('Error submitting testimonial:', error);
-            alert('Failed to submit testimonial. Please try again.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Failed to submit testimonial. Please try again.',
+                confirmButtonColor: '#1f2937',
+                customClass: {
+                    popup: 'dark:bg-gray-800 dark:text-white',
+                    title: 'dark:text-white',
+                    content: 'dark:text-white'
+                }
+            });
             return;
         }
 
@@ -143,7 +154,17 @@ const Testimonials = () => {
         setIsSubmitting(false);
 
         // Show success message
-        alert('✨ Testimonial submitted successfully! Thank you for your feedback.');
+        Swal.fire({
+            icon: 'success',
+            title: 'Thank You!',
+            text: 'Testimonial submitted successfully!',
+            confirmButtonColor: '#1f2937',
+            customClass: {
+                popup: 'dark:bg-gray-800 dark:text-white',
+                title: 'dark:text-white',
+                content: 'dark:text-white'
+            }
+        });
     };
 
     // Render stars
@@ -175,7 +196,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Testimonial Card */}
-                <div className="bg-white dark:bg-gray-800 rounded-lg mb-10 shadow-lg border border-white dark:border-white max-w-4xl mx-auto"  data-aos-delay="600" data-aos="fade-up">
+                <div className="bg-white dark:bg-gray-800 rounded-lg mb-10 shadow-lg border border-white dark:border-white max-w-4xl mx-auto" data-aos-delay="600" data-aos="fade-up">
                     {/* Card Header */}
                     <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
                         <h3 className="text-xl font-semibold text-gray-800 dark:text-white flex items-center gap-2">
@@ -185,7 +206,7 @@ const Testimonials = () => {
 
                         <button
                             onClick={() => setIsModalOpen(true)}
-                            className="px-6 py-2 bg-gray-800 text-white dark:bg-white dark:text-gray-800 rounded-lg font-medium flex items-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
+                            className="px-6 py-2 bg-gray-800 ml-3 text-white dark:bg-white dark:text-gray-800 rounded-lg font-medium  flex items-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
                             aria-label="Add a new testimonial"
                         >
                             <i className="bx bx-plus text-lg" />
@@ -414,9 +435,9 @@ const Testimonials = () => {
                             </button>
                         </div>
                     </div>
-                </div>
-            </CustomModal>
-        </section>
+                    </div>
+                </CustomModal>
+            </section>
     );
 };
 
