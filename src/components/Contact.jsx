@@ -89,7 +89,7 @@ const Contact = () => {
                     className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-white text-sm focus:outline-none focus:ring-2 focus:ring-gray-800"
                     rows="5"
                   />
-                  <Tippy content="Send your message 🚀" placement="top">
+                  <Tippy content="Send your message" placement="top">
                     <button
                       type="button"
                       onClick={() => {
