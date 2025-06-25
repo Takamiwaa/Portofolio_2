@@ -18,7 +18,7 @@ const Contact = () => {
         {/* Tabs Menu */}
         <div className="flex justify-center mb-8 gap-4 flex-wrap" data-aos-delay="600" data-aos="fade-up">
           {[
-            { value: "contact", label: "Contact", icon: "bx bx-envelope" },
+            { value: "contact", label: "Contact Me", icon: "bx bx-envelope" },
             { value: "support", label: "Support Me", icon: "bx bx-heart" },
           ].map((tab) => (
             <button
