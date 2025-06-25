@@ -14,7 +14,7 @@ const CustomModal = ({ isOpen, onClose, children }) => {
         <div className="fixed inset-0 z-50 flex items-center justify-center">
             {/* Backdrop */}
             <div
-                className="absolute  transition-opacity"
+                className="absolute inset-0 backdrop-blur-md bg-black/50 transition-opacity"
                 onClick={onClose}
             />
 
