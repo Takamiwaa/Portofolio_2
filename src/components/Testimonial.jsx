@@ -180,7 +180,7 @@ const Testimonials = () => {
     return (
         <section
             id="testimonials"
-            className="pt-20 min-h-screen px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+            className="pt-20 min-h-screen  overflow-hidden px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
             data-aos-duration="1000"
             data-aos="fade-down"
         >
