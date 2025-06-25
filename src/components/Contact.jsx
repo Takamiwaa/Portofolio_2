@@ -16,7 +16,7 @@ const Contact = () => {
         </div>
 
         {/* Tabs Menu */}
-        <div className="flex justify-center mb-8 gap-4 flex-wrap" data-aos-delay="600" data-aos="fade-up">
+        <div className="flex justify-center mb-8 gap-4 flex-wrap" data-aos-delay="600" data-aos="fade-down">
           {[
             { value: "contact", label: "Contact Me", icon: "bx bx-envelope" },
             { value: "support", label: "Support Me", icon: "bx bx-heart" },
