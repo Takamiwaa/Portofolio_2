@@ -68,7 +68,7 @@ const Contact = () => {
               </div>
 
               {/* Right Side: Contact Form */}
-              <div className="rounded-lg py-12 px-7 shadow-lg border border-white max-w-xl w-full mx-auto lg:mx-0">
+              <div className="rounded-lg py-12 px-7 shadow-lg border h-fit border-white max-w-xl w-full mx-auto lg:mx-0">
                 <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-white flex items-center gap-2">
                   <i className="bx bx-envelope text-lg" />
                   Send Me a Message
