@@ -246,7 +246,7 @@ const Testimonials = () => {
                                             <img
                                                 src={testimonial.avatar}
                                                 alt={`Avatar of ${testimonial.name}`}
-                                                className="w-10 h-10 rounded-full object-cover ring-2 ring-gray-200 dark:ring-gray-600"
+                                                className="w-10 h-10 rounded-full shadow-lg object-cover ring-2 ring-gray-200 dark:ring-gray-600"
                                                 onError={(e) => {
                                                     e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=1f2937&color=fff&size=48`;
                                                 }}
