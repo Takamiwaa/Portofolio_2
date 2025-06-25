@@ -41,7 +41,7 @@ const Contact = () => {
           {activeTab === "contact" && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" data-aos-delay="600" data-aos="fade-down">
               {/* Left Side: Social Links */}
-              <div className="grid gap-4 max-w-md mx-auto lg:mx-0">
+              <div className="grid gap-4 max-w-xl mx-auto lg:mx-0">
                 {contactData.socials.map((item, index) => (
                   <a
                     key={index}
