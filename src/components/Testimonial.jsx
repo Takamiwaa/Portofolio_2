@@ -215,7 +215,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Card Body (Scrollable) */}
-                    <div className="max-h-[500px] overflow-y-auto p-6">
+                    <div className="max-h-[500px] overflow-y-auto scrollbar-hide p-6">
                         {testimonials.length > 0 ? (
                             <div className="space-y-6">
                                 {testimonials.map((testimonial, index) => (
