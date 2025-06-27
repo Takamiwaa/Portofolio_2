@@ -115,7 +115,7 @@ const Experience = () => {
         </div>
 
         {/* Experiences Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos-delay="600" data-aos="fade-down">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mb-4 gap-6" data-aos-delay="600" data-aos="fade-down">
           {currentExperiences.map((experience, index) => (
             <div
               key={index}
