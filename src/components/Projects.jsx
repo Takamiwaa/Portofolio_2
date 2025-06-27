@@ -1,6 +1,7 @@
 import { useState } from "react";
 import projectData from "../data/projectData.jsx";
 import Tippy from '@tippyjs/react';
+import Swal from 'sweetalert2';
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -28,8 +29,49 @@ const Projects = () => {
     }
   };
 
+  // Handle Demo button click with SweetAlert2 confirmation
+  const handleDemoClick = (url) => {
+    Swal.fire({
+      title: "Visit Demo?",
+      text: "You will be redirected to the demo page.",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#1F2937",
+      cancelButtonColor: "#6B7280",
+      confirmButtonText: "Yes, go to demo",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+    });
+  };
+
+  // Handle Code button click with SweetAlert2 confirmation
+  const handleCodeClick = (url) => {
+    Swal.fire({
+      title: "View Code?",
+      text: "You will be redirected to the GitHub repository.",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#1F2937",
+      cancelButtonColor: "#6B7280",
+      confirmButtonText: "Yes, view code",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+    });
+  };
+
+  // Debugging: Log project icons to console
+  currentProjects.forEach(project => {
+    console.log(`Project: ${project.title}, Icon: ${project.icon}`);
+  });
+
   return (
-    <section id="projects" className="min-h-screen  bg-white dark:bg-gray-800 pt-20" data-aos-duration="1000" data-aos="fade-down">
+    <section id="projects" className="min-h-screen pb-20 bg-white dark:bg-gray-800 pt-20" data-aos-duration="1000" data-aos="fade-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title & Subtitle */}
         <div className="text-center mb-12 text-gray-800" data-aos-delay="600" data-aos="fade-down">
@@ -106,32 +148,28 @@ const Projects = () => {
               <div className="flex gap-2">
                 {project.demo && (
                   <Tippy content="View Demo" placement="top">
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => handleDemoClick(project.demo)}
                       className={`px-4 py-2 bg-gray-800 text-white dark:bg-white dark:text-gray-800 rounded-lg font-medium flex items-center justify-center gap-2 transition-all transform hover:-translate-y-1 ${
                         project.demo && project.github ? 'w-[70%]' : 'w-full'
                       }`}
                     >
                       Demo
                       <i className="bx bx-link-external"></i>
-                    </a>
+                    </button>
                   </Tippy>
                 )}
                 {project.github && (
                   <Tippy content="View Code" placement="top">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => handleCodeClick(project.github)}
                       className={`px-4 py-2 bg-white text-gray-800 dark:bg-gray-800 dark:text-white border border-gray-300 dark:border-gray-700 rounded-lg font-medium flex items-center justify-center gap-2 transition-all transform hover:-translate-y-1 ${
                         project.demo && project.github ? 'w-[30%]' : 'w-full'
                       }`}
                     >
                       Code
                       <i className="bx bx-code"></i>
-                    </a>
+                    </button>
                   </Tippy>
                 )}
               </div>
