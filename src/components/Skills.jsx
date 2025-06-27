@@ -1,11 +1,18 @@
 import { useState } from "react";
-import skillsData from "../data/skillData.jsx";
+import skillsData from '../data/skillData.jsx';
 import Tippy from '@tippyjs/react';
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState("Frontend");
   const [currentPage, setCurrentPage] = useState(1);
   const skillsPerPage = 6;
+
+  // Skill level descriptions
+  const levelDescriptions = {
+    Advanced: "Proficient in complex tasks",
+    Intermediate: "Comfortable with common tasks",
+    Basic: "Learning and experimenting"
+  };
 
   // Filter skills based on the active tab
   const filteredCategory = skillsData.categories.find(
@@ -63,25 +70,21 @@ const Skills = () => {
         </div>
 
         {/* Skills Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos-delay="600" data-aos="fade-down">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-4 gap-6" data-aos-delay="600" data-aos="fade-down">
           {currentSkills.map((skill, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 border border-white rounded-lg shadow-lg p-6 hover:-translate-y-1 transition-transform"
+              className="bg-white dark:bg-gray-800 border border-white rounded-lg shadow-lg p-6 hover:-translate-y-1 transition-transform flex flex-col items-center"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 flex items-center justify-center shadow-lg rounded-lg bg-gray-800 text-white dark:bg-white dark:text-gray-800 shrink-0">
-                  <i className={`bx ${skill.icon} text-5xl`}></i>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">{skill.name}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                    <Tippy content={`Proficiency: ${skill.level}`} placement="top">
-                      <span className="inline-block">{skill.level}</span>
-                    </Tippy>
-                  </p>
-                </div>
+              <div className="w-16 h-16 flex items-center justify-center shadow-lg rounded-lg bg-gray-800 text-white dark:bg-white dark:text-gray-800 mb-4">
+                <i className={`bx ${skill.icon} text-5xl`}></i>
               </div>
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">{skill.name}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-center">
+                <Tippy content={levelDescriptions[skill.level] || `Proficiency: ${skill.level}`} placement="top">
+                  <span className="inline-block">{skill.level}</span>
+                </Tippy>
+              </p>
             </div>
           ))}
         </div>
