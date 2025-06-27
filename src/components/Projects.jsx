@@ -1,8 +1,6 @@
 import { useState } from "react";
 import projectData from "../data/projectData.jsx";
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // Ensure Tippy CSS is imported
-import 'boxicons/css/boxicons.min.css'; // Ensure Boxicons CSS is imported
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -31,7 +29,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen pb-20 bg-white dark:bg-gray-800 pt-20" data-aos-duration="1000" data-aos="fade-down">
+    <section id="projects" className="min-h-screen  bg-white dark:bg-gray-800 pt-20" data-aos-duration="1000" data-aos="fade-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title & Subtitle */}
         <div className="text-center mb-12 text-gray-800" data-aos-delay="600" data-aos="fade-down">

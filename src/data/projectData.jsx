@@ -17,8 +17,8 @@ const projectData = {
       tech: ["React", "Supabase", "Tailwind"],
       year: 2025,
       status: "Completed",
-      demo: "https://money-tracker.vercel.app",
-      github: "https://github.com/Hizkia178/money-tracker"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-id-card",
@@ -33,8 +33,8 @@ const projectData = {
       tech: ["React", "Tailwind"],
       year: 2025,
       status: "Completed",
-      demo: "https://hizkia.vercel.app",
-      github: "https://github.com/Hizkia178/project-portofolio"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-bot",
@@ -49,8 +49,8 @@ const projectData = {
       tech: ["React", "Express", "Node.js"],
       year: 2025,
       status: "Completed",
-      demo: "https://chatbot-hizkia.vercel.app",
-      github: "https://github.com/Hizkia178/chatbot-json"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-server",
@@ -65,8 +65,8 @@ const projectData = {
       tech: ["Node.js", "Express", "MongoDB"],
       year: 2024,
       status: "Completed",
-      demo: null,
-      github: "https://github.com/Hizkia178/rest-api-template"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-cloud-lightning",
@@ -81,8 +81,8 @@ const projectData = {
       tech: ["HTML", "CSS", "JavaScript"],
       year: 2024,
       status: "Completed",
-      demo: "https://weather-hizkia.vercel.app",
-      github: "https://github.com/Hizkia178/weather-app"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-link-alt",
@@ -97,8 +97,8 @@ const projectData = {
       tech: ["React", "Supabase"],
       year: 2025,
       status: "In Progress",
-      demo: null,
-      github: "https://github.com/Hizkia178/link-collector"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-notepad",
@@ -113,8 +113,8 @@ const projectData = {
       tech: ["React"],
       year: 2023,
       status: "Completed",
-      demo: "https://note-hizkia.vercel.app",
-      github: "https://github.com/Hizkia178/note-app"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-message-detail",
@@ -129,8 +129,8 @@ const projectData = {
       tech: ["React", "Supabase"],
       year: 2025,
       status: "In Progress",
-      demo: null,
-      github: "https://github.com/Hizkia178/qna-forum"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-calendar-check",
@@ -145,8 +145,8 @@ const projectData = {
       tech: ["React", "Tailwind"],
       year: 2024,
       status: "Completed",
-      demo: "https://habit-hizkia.vercel.app",
-      github: "https://github.com/Hizkia178/habit-tracker"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-bulb",
@@ -161,8 +161,8 @@ const projectData = {
       tech: ["Node.js", "MongoDB"],
       year: 2024,
       status: "Completed",
-      demo: null,
-      github: "https://github.com/Hizkia178/feedback-board"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-image",
@@ -177,8 +177,8 @@ const projectData = {
       tech: ["React", "Tailwind"],
       year: 2023,
       status: "Completed",
-      demo: "https://gallery-hizkia.vercel.app",
-      github: "https://github.com/Hizkia178/image-gallery"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-code-block",
@@ -193,8 +193,8 @@ const projectData = {
       tech: ["React", "Tailwind"],
       year: 2024,
       status: "Completed",
-      demo: "https://markdown-hizkia.vercel.app",
-      github: "https://github.com/Hizkia178/markdown-editor"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-chat",
@@ -209,8 +209,8 @@ const projectData = {
       tech: ["React", "Supabase"],
       year: 2025,
       status: "In Progress",
-      demo: null,
-      github: "https://github.com/Hizkia178/realtime-chat"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-money",
@@ -225,8 +225,8 @@ const projectData = {
       tech: ["HTML", "CSS", "JavaScript"],
       year: 2024,
       status: "Completed",
-      demo: "https://currency-hizkia.vercel.app",
-      github: "https://github.com/Hizkia178/currency-converter"
+      demo: "#",
+      github: "#"
     },
     {
       icon: "bx bx-task",
@@ -241,8 +241,8 @@ const projectData = {
       tech: ["Node.js", "PostgreSQL"],
       year: 2025,
       status: "Completed",
-      demo: null,
-      github: "https://github.com/Hizkia178/todo-api-server"
+      demo: "#",
+      github: "#"
     }
   ]
 };
