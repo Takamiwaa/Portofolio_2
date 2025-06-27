@@ -94,7 +94,7 @@ const experienceData = {
       tech: ["Notion", "Excel", "Trello"]
     },
     {
-      icon: "bx bx-megaphone",
+      icon: "bx bx-color-fill",
       tab: "Organization",
       title: "Public Relations Staff",
       company: "Forum Mahasiswa",
