@@ -5,6 +5,7 @@
 
 html, body{
     scroll-behavior: smooth;
+    will-change:transform;
 }
 
 .scrollbar-hide {
